@@ -13,16 +13,26 @@ Built to mirror how a real support-AI system should be developed: not just "call
 - **Eval harness:** LLM-as-Judge scoring on relevance, tone, and completeness, run against a 20-case test set
 
 ## Architecture
-Ticket (text) → Agent Service (FastAPI + LLM) → Category, Draft Reply, Escalate?
-│ logs every call
-▼
-SQLite: ticket_events table
-│
-┌──────────────┴──────────────┐
-▼ ▼
-React Dashboard Eval Harness (CLI)
-(live metrics) LLM-as-Judge scoring
 
+```
+                    ┌─────────────────┐
+   Ticket (text) →  │   Agent Service  │ → Category, Draft Reply, Escalate?
+                    │  (FastAPI + LLM) │
+                    └────────┬─────────┘
+                             │ logs every call
+                             ▼
+                    ┌─────────────────┐
+                    │  SQLite: events  │  (latency, tokens, cost, category,
+                    │      table       │   confidence, escalated, timestamp)
+                    └────────┬─────────┘
+                             │
+              ┌──────────────┴──────────────┐
+              ▼                              ▼
+     ┌─────────────────┐          ┌─────────────────────┐
+     │  React Dashboard │          │   Eval Harness (CLI) │
+     │  (live metrics)  │          │  LLM-as-Judge scoring│
+     └─────────────────┘          └─────────────────────┘
+```
 ## Tech stack
 
 - **Backend:** FastAPI, SQLAlchemy, SQLite
