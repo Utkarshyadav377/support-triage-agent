@@ -2,5 +2,21 @@
   {"ticket": "My card was charged twice this month", "expected_category": "billing"},
   {"ticket": "The app crashes every time I open settings", "expected_category": "technical"},
   {"ticket": "Can you add dark mode to the dashboard?", "expected_category": "feature_request"},
-  {"ticket": "I can't log in, it says my account is locked", "expected_category": "account"}
+  {"ticket": "I can't log in, it says my account is locked", "expected_category": "account"},
+  {"ticket": "I was billed for the annual plan but I only wanted monthly", "expected_category": "billing"},
+  {"ticket": "Every time I export a report the file comes out blank", "expected_category": "technical"},
+  {"ticket": "Please cancel my subscription and refund this month", "expected_category": "billing"},
+  {"ticket": "I forgot my password and the reset email never arrives", "expected_category": "account"},
+  {"ticket": "It would be great if the mobile app supported offline mode", "expected_category": "feature_request"},
+  {"ticket": "This is absolutely ridiculous, I've been charged three times now and nobody is responding to my emails, fix this immediately", "expected_category": "billing"},
+  {"ticket": "My account got suspended for no reason and I have no idea why, this is unacceptable", "expected_category": "account"},
+  {"ticket": "Can you tell me how the free trial works and when I'll start getting charged", "expected_category": "billing"},
+  {"ticket": "I want to delete my account permanently and all my data with it", "expected_category": "account"},
+  {"ticket": "The search bar returns no results even for things I know exist", "expected_category": "technical"},
+  {"ticket": "Is there a way to integrate this with Slack? Would be huge for our team", "expected_category": "feature_request"},
+  {"ticket": "I was charged for premium but I'm still seeing the free plan limits, and also the app keeps freezing on the billing page", "expected_category": "billing"},
+  {"ticket": "Two-factor authentication isn't sending me the code, I'm locked out", "expected_category": "account"},
+  {"ticket": "Just wanted to say the new update looks great, nice work", "expected_category": "other"},
+  {"ticket": "Why does the invoice PDF download come out corrupted every time", "expected_category": "technical"},
+  {"ticket": "Not sure who to ask but is there a public API for this product?", "expected_category": "other"}
 ]
