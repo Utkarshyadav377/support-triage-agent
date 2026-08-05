@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 
 interface Metrics {
@@ -11,14 +10,14 @@ interface Metrics {
   escalation_rate: number;
   recent: any[];
 }
-
+const API_URL = import.meta.env.VITE_API_URL || "https://support-triage-agent-lerr.onrender.com/";
 function App() {
   const [metrics, setMetrics] = useState<Metrics | null>(null);
   const [ticketText, setTicketText] = useState("");
   const [result, setResult] = useState<any>(null);
 
   const fetchMetrics = async () => {
-    const res = await axios.get("http://localhost:8000/metrics");
+    const res = await axios.get(`${API_URL}/metrics`);
     setMetrics(res.data);
   };
 
@@ -29,7 +28,7 @@ function App() {
   }, []);
 
   const submitTicket = async () => {
-    const res = await axios.post("http://localhost:8000/triage", { text: ticketText });
+    const res = await axios.post(`${API_URL}/triage`, { text: ticketText });
     setResult(res.data);
     fetchMetrics();
   };
