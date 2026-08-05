@@ -1,3 +1,4 @@
+PROMPT_VERSION = "v4"  # bump this every time you change SYSTEM_PROMPT
 import json, requests
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -60,3 +61,23 @@ print(f"Avg tone: {avg_tone:.2f}/5")
 
 with open("eval_results.json", "w") as f:
     json.dump(results, f, indent=2)
+
+import csv
+from datetime import datetime
+from pathlib import Path
+
+log_path = Path("eval_history.csv")
+is_new = not log_path.exists()
+
+with open(log_path, "a", newline="") as f:
+    writer = csv.writer(f)
+    if is_new:
+        writer.writerow(["timestamp", "prompt_version", "accuracy", "avg_relevance", "avg_tone", "num_cases"])
+    writer.writerow([
+        datetime.now().isoformat(timespec="seconds"),
+        PROMPT_VERSION,
+        round(accuracy, 3),
+        round(avg_relevance, 2),
+        round(avg_tone, 2),
+        len(test_cases),
+    ])

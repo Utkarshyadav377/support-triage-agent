@@ -10,7 +10,7 @@
       "completeness": 3,
       "notes": "The reply is relevant and empathetic but lacks specific details on the next steps or required information to process the refund."
     },
-    "latency_ms": 664
+    "latency_ms": 2535
   },
   {
     "ticket": "The app crashes every time I open settings",
@@ -23,7 +23,7 @@
       "completeness": 4,
       "notes": "The reply is mostly complete but could benefit from asking more specific questions about the crash."
     },
-    "latency_ms": 370
+    "latency_ms": 2642
   },
   {
     "ticket": "Can you add dark mode to the dashboard?",
@@ -36,7 +36,7 @@
       "completeness": 2,
       "notes": "The response is relevant and professional but lacks specific details or a timeline for the potential addition of dark mode."
     },
-    "latency_ms": 304
+    "latency_ms": 2431
   },
   {
     "ticket": "I can't log in, it says my account is locked",
@@ -49,7 +49,7 @@
       "completeness": 3,
       "notes": "The reply is mostly relevant and empathetic but lacks specific troubleshooting steps to move the conversation forward."
     },
-    "latency_ms": 283
+    "latency_ms": 2378
   },
   {
     "ticket": "I was billed for the annual plan but I only wanted monthly",
@@ -60,9 +60,9 @@
       "relevance": 5,
       "tone": 5,
       "completeness": 4,
-      "notes": "The reply is mostly complete but could benefit from specifying exactly what account details are required to expedite the process."
+      "notes": "The reply is mostly complete but could benefit from explicitly stating the next steps after receiving the order number or email address."
     },
-    "latency_ms": 458
+    "latency_ms": 2530
   },
   {
     "ticket": "Every time I export a report the file comes out blank",
@@ -75,7 +75,7 @@
       "completeness": 4,
       "notes": "The reply is mostly complete but could benefit from mentioning a specific troubleshooting step or a potential solution to the issue."
     },
-    "latency_ms": 445
+    "latency_ms": 2548
   },
   {
     "ticket": "Please cancel my subscription and refund this month",
@@ -85,10 +85,10 @@
     "judge_score": {
       "relevance": 5,
       "tone": 4,
-      "completeness": 5,
-      "notes": "The reply is mostly complete but could benefit from a more empathetic tone to acknowledge the customer's request."
+      "completeness": 3,
+      "notes": "The reply is mostly satisfactory but lacks specific details on the refund and cancellation process timeline."
     },
-    "latency_ms": 292
+    "latency_ms": 2760
   },
   {
     "ticket": "I forgot my password and the reset email never arrives",
@@ -101,7 +101,7 @@
       "completeness": 4,
       "notes": "The reply is mostly complete but could benefit from providing additional troubleshooting steps or a direct link to a password reset page."
     },
-    "latency_ms": 409
+    "latency_ms": 2831
   },
   {
     "ticket": "It would be great if the mobile app supported offline mode",
@@ -112,9 +112,9 @@
       "relevance": 5,
       "tone": 4,
       "completeness": 2,
-      "notes": "The response acknowledges the user's suggestion but lacks additional information or follow-up questions to further understand their needs."
+      "notes": "The response acknowledges the customer's suggestion but lacks additional information or follow-up questions to further understand their needs."
     },
-    "latency_ms": 259
+    "latency_ms": 2496
   },
   {
     "ticket": "This is absolutely ridiculous, I've been charged three times now and nobody is responding to my emails, fix this immediately",
@@ -127,7 +127,7 @@
       "completeness": 2,
       "notes": "The reply acknowledges the issue but lacks specific actions or a request for additional information to resolve the problem."
     },
-    "latency_ms": 337
+    "latency_ms": 2561
   },
   {
     "ticket": "My account got suspended for no reason and I have no idea why, this is unacceptable",
@@ -138,9 +138,9 @@
       "relevance": 5,
       "tone": 5,
       "completeness": 4,
-      "notes": "The reply is mostly complete but could benefit from a more detailed explanation of the next steps in the investigation process."
+      "notes": "The reply is mostly effective but could benefit from a brief explanation of the next steps or a timeline for resolution."
     },
-    "latency_ms": 344
+    "latency_ms": 2447
   },
   {
     "ticket": "Can you tell me how the free trial works and when I'll start getting charged",
@@ -153,7 +153,7 @@
       "completeness": 2,
       "notes": "The reply is somewhat relevant and professional but lacks specific details about the free trial and billing schedule."
     },
-    "latency_ms": 410
+    "latency_ms": 2541
   },
   {
     "ticket": "I want to delete my account permanently and all my data with it",
@@ -163,10 +163,10 @@
     "judge_score": {
       "relevance": 5,
       "tone": 4,
-      "completeness": 3,
-      "notes": "The reply is mostly effective but lacks specific steps or a clear call to action to guide the user through the account deletion process."
+      "completeness": 5,
+      "notes": "The reply is mostly effective but could benefit from a more empathetic tone to acknowledge the user's decision to delete their account."
     },
-    "latency_ms": 436
+    "latency_ms": 2864
   },
   {
     "ticket": "The search bar returns no results even for things I know exist",
@@ -177,9 +177,9 @@
       "relevance": 5,
       "tone": 5,
       "completeness": 4,
-      "notes": "The reply is a good start but could be improved with additional troubleshooting steps or questions to help resolve the issue."
+      "notes": "The reply is a good start but could be improved with more specific troubleshooting questions or potential solutions to move the conversation forward."
     },
-    "latency_ms": 291
+    "latency_ms": 2683
   },
   {
     "ticket": "Is there a way to integrate this with Slack? Would be huge for our team",
@@ -187,12 +187,12 @@
     "actual": "feature_request",
     "category_match": true,
     "judge_score": {
-      "relevance": 4,
-      "tone": 4,
-      "completeness": 2,
-      "notes": "The reply acknowledges the customer's suggestion but lacks specific details or next steps regarding the potential Slack integration."
+      "relevance": 5,
+      "tone": 5,
+      "completeness": 4,
+      "notes": "The reply is mostly complete but could benefit from a more specific question about the user's integration vision."
     },
-    "latency_ms": 492
+    "latency_ms": 2450
   },
   {
     "ticket": "I was charged for premium but I'm still seeing the free plan limits, and also the app keeps freezing on the billing page",
@@ -203,9 +203,9 @@
       "relevance": 5,
       "tone": 5,
       "completeness": 4,
-      "notes": "The reply is mostly complete but could benefit from a clearer explanation of the next steps or a potential solution to the user's issue."
+      "notes": "The reply is mostly complete but could benefit from a more specific troubleshooting step or a mention of a potential solution."
     },
-    "latency_ms": 2614
+    "latency_ms": 2397
   },
   {
     "ticket": "Two-factor authentication isn't sending me the code, I'm locked out",
@@ -216,9 +216,9 @@
       "relevance": 4,
       "tone": 5,
       "completeness": 3,
-      "notes": "The reply is mostly relevant and empathetic but lacks additional troubleshooting steps or a clear next step to resolve the issue."
+      "notes": "The reply is mostly relevant and empathetic but lacks additional troubleshooting steps or an offer to escalate the issue."
     },
-    "latency_ms": 2586
+    "latency_ms": 2407
   },
   {
     "ticket": "Just wanted to say the new update looks great, nice work",
@@ -228,10 +228,10 @@
     "judge_score": {
       "relevance": 5,
       "tone": 5,
-      "completeness": 4,
-      "notes": "The reply is a polite acknowledgement, but could be improved by adding a question or statement to further engage the customer."
+      "completeness": 2,
+      "notes": "The response is a good acknowledgement but does not add any additional value or ask for further feedback."
     },
-    "latency_ms": 2589
+    "latency_ms": 2382
   },
   {
     "ticket": "Why does the invoice PDF download come out corrupted every time",
@@ -244,7 +244,7 @@
       "completeness": 4,
       "notes": "The reply is mostly complete but could benefit from providing more specific troubleshooting steps or a direct solution to the corrupted PDF download issue."
     },
-    "latency_ms": 2508
+    "latency_ms": 2479
   },
   {
     "ticket": "Not sure who to ask but is there a public API for this product?",
@@ -257,6 +257,6 @@
       "completeness": 4,
       "notes": "The reply is mostly complete but could include a direct link to the developer documentation to further assist the customer."
     },
-    "latency_ms": 2456
+    "latency_ms": 2443
   }
 ]
