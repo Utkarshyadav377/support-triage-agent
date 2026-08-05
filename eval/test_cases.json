@@ -1,0 +1,6 @@
+[
+  {"ticket": "My card was charged twice this month", "expected_category": "billing"},
+  {"ticket": "The app crashes every time I open settings", "expected_category": "technical"},
+  {"ticket": "Can you add dark mode to the dashboard?", "expected_category": "feature_request"},
+  {"ticket": "I can't log in, it says my account is locked", "expected_category": "account"}
+]

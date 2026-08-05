@@ -1,0 +1,54 @@
+[
+  {
+    "ticket": "My card was charged twice this month",
+    "expected": "billing",
+    "actual": "billing",
+    "category_match": true,
+    "judge_score": {
+      "relevance": 5,
+      "tone": 5,
+      "completeness": 3,
+      "notes": "The reply is relevant and empathetic but lacks specific details on the next steps or required information to process the refund."
+    },
+    "latency_ms": 730
+  },
+  {
+    "ticket": "The app crashes every time I open settings",
+    "expected": "technical",
+    "actual": "technical",
+    "category_match": true,
+    "judge_score": {
+      "relevance": 5,
+      "tone": 5,
+      "completeness": 4,
+      "notes": "The reply is a good start but could be improved by suggesting specific troubleshooting steps or asking for more specific information about the crash."
+    },
+    "latency_ms": 314
+  },
+  {
+    "ticket": "Can you add dark mode to the dashboard?",
+    "expected": "feature_request",
+    "actual": "feature_request",
+    "category_match": true,
+    "judge_score": {
+      "relevance": 5,
+      "tone": 4,
+      "completeness": 2,
+      "notes": "The response is polite but lacks a clear timeline or request for additional feedback to move the conversation forward."
+    },
+    "latency_ms": 381
+  },
+  {
+    "ticket": "I can't log in, it says my account is locked",
+    "expected": "account",
+    "actual": "account",
+    "category_match": true,
+    "judge_score": {
+      "relevance": 4,
+      "tone": 5,
+      "completeness": 3,
+      "notes": "The reply is mostly helpful but lacks specific troubleshooting steps for the account lock issue."
+    },
+    "latency_ms": 286
+  }
+]
