@@ -1,6 +1,7 @@
 import time, json, os
 from openai import OpenAI
 from dotenv import load_dotenv
+from .knowledge_base import search_knowledge_base
 
 load_dotenv()
 
@@ -41,12 +42,15 @@ def triage_ticket(ticket_text: str) -> dict:
     start = time.time()
     error = None
     result = {}
+    retrieved_docs = search_knowledge_base(ticket_text)
+    context = "\n\n".join(f"[{d['title']}]: {d['content']}" for d in retrieved_docs) if retrieved_docs else "No relevant knowledge base entries found."
+
     try:
         response = client.chat.completions.create(
-            model="openai/gpt-oss-120b",  
+            model="openai/gpt-oss-120b",
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": ticket_text},
+                {"role": "user", "content": f"Relevant knowledge base context:\n{context}\n\nTicket: {ticket_text}\n\nUse the knowledge base context above to inform your draft_reply where relevant."},
             ],
             temperature=0,
         )
@@ -55,7 +59,7 @@ def triage_ticket(ticket_text: str) -> dict:
         usage = response.usage
         input_tokens = usage.prompt_tokens
         output_tokens = usage.completion_tokens
-        cost = 0.0  
+        cost = 0.0
     except Exception as e:
         error = str(e)
         input_tokens = output_tokens = 0
