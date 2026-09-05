@@ -4,9 +4,23 @@ from pydantic import BaseModel
 from .agent import triage_ticket
 from .db import SessionLocal, TicketEvent
 from sqlalchemy import func
+import requests as http_requests
 
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+
+import requests as http_requests
+
+SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")
+ERROR_RATE_THRESHOLD = 0.2  # alert if error rate exceeds 20%
+
+def send_slack_alert(message: str):
+    if not SLACK_WEBHOOK_URL:
+        return
+    try:
+        http_requests.post(SLACK_WEBHOOK_URL, json={"text": message}, timeout=5)
+    except Exception:
+        pass  # don't let alerting failures break the main request
 
 class TicketRequest(BaseModel):
     text: str
@@ -29,6 +43,16 @@ def triage(req: TicketRequest):
     )
     db.add(event)
     db.commit()
+
+    # Check error rate over the last 20 tickets and alert if it crosses the threshold
+    recent_n = 20
+    recent_events = db.query(TicketEvent).order_by(TicketEvent.id.desc()).limit(recent_n).all()
+    if len(recent_events) >= 5:  # don't alert on tiny sample sizes
+        error_count = sum(1 for e in recent_events if e.error is not None)
+        error_rate = error_count / len(recent_events)
+        if error_rate > ERROR_RATE_THRESHOLD:
+            send_slack_alert(f":rotating_light: Error rate at {error_rate:.0%} over last {len(recent_events)} tickets on Support Triage Agent.")
+
     db.close()
     return result
 
