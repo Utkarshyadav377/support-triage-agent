@@ -10,7 +10,7 @@ interface Metrics {
   escalation_rate: number;
   recent: any[];
 }
-const API_URL = import.meta.env.VITE_API_URL || "https://support-triage-agent-lerr.onrender.com/";
+const API_URL = import.meta.env.VITE_API_URL || "https://support-triage-agent-lerr.onrender.com";
 function App() {
   const [metrics, setMetrics] = useState<Metrics | null>(null);
   const [ticketText, setTicketText] = useState("");
