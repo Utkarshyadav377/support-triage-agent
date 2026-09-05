@@ -5,6 +5,11 @@ from .agent import triage_ticket
 from .db import SessionLocal, TicketEvent
 from sqlalchemy import func
 import requests as http_requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
